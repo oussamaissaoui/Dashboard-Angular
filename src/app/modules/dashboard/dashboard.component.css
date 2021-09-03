@@ -1,0 +1,45 @@
+gridster-item{
+    
+}
+
+gridster{
+    background: #e2dfdf;;
+}
+
+
+    .p-inputtext {
+        display: block;
+        margin-bottom: .5rem;
+
+        
+    }
+
+
+.p-field * {
+    display: block;
+}
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+  .pie{
+    /* width: max-content;*/
+    
+    
+    width: max-content;
+    height: 100%;
+     
+ }
+ 

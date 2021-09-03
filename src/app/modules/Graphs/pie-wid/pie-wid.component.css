@@ -1,0 +1,15 @@
+.pie{
+   /* width: max-content;*/
+   
+   
+   width: max-content;
+   height: 100%;
+    
+}
+
+.container{
+
+    height: auto;
+    
+    background-color: red;
+}

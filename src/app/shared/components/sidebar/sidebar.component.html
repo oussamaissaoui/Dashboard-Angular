@@ -1,0 +1,519 @@
+<mat-nav-list>
+
+    <div class="profile-card">
+
+        <div class="header"></div>
+        <h2>User Name</h2>
+        <h4>User Mail</h4>
+
+        
+
+        
+        <img src="https://i.pinimg.com/originals/65/25/a0/6525a08f1df98a2e3a545fe2ace4be47.jpg" alt="">
+
+    </div>
+
+<mat-divider></mat-divider>
+
+    <a mat-list-item  (click)="open(content)" matTooltip="Vous pouvez ajouter le widget en selectionnant directement sur l'emplacement dans l'espace du dashboard" matTooltipClass="custom-tooltip">Add Widget</a>
+
+
+<mat-divider></mat-divider>
+
+
+
+
+
+</mat-nav-list>
+
+
+  
+  
+  
+  
+  
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  
+  
+      <div class="modal-body">
+      
+      
+        <mat-horizontal-stepper #stepper>
+          
+          
+          <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+
+            <ng-template matStepLabel>Choisir le Graphe</ng-template>
+            <mat-tab-group dynamicHeight>
+                  
+                  
+              <mat-tab label="Donut Chart">
+
+                
+                
+                <div class="pie" [chart]="donutchart" (click)="ClickDiv()">
+                  
+                </div>
+                <br>
+                <br>
+                <mat-accordion>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <h3>Comment configurer le Graphe ?</h3>
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Cliquez pour accèder au didactiel détaillé de configuration
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>desciption du JSON du widget 1</p>
+                    <p>desciption du JSON du widget 2</p>
+                    <p>desciption du JSON du widget 3</p>
+                    <p>desciption du JSON du widget 4</p>
+                    <p>desciption du JSON du widget 5</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                       (closed)="panelOpenState = false">
+                   
+                  </mat-expansion-panel>
+                </mat-accordion>
+
+                <button mat-raised-button color="primary" matStepperNext style="margin-left: 85%; margin-top: 1%;" (click)="SelectDonutChart()">Select Chart</button>
+                  
+              </mat-tab>
+              
+
+              <mat-tab label="Bar Chart">
+                
+                <div [chart]="barchart" style="margin-right: 10%;" (click)="ClickDiv()">
+
+                </div>
+                <br>
+                <br>
+                <mat-accordion>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <h3>Comment configurer le Graphe ?</h3>
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Cliquez pour accèder au didactiel détaillé de configuration
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>desciption du JSON du widget 1</p>
+                    <p>desciption du JSON du widget 2</p>
+                    <p>desciption du JSON du widget 3</p>
+                    <p>desciption du JSON du widget 4</p>
+                    <p>desciption du JSON du widget 5</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                       (closed)="panelOpenState = false">
+                   
+                  </mat-expansion-panel>
+                </mat-accordion>
+                <button mat-raised-button color="primary" matStepperNext style="margin-left: 85%; margin-top: 1%;"(click)="SelectBarChart()">Select Chart</button>
+              </mat-tab>
+
+
+
+              <mat-tab label="Line chart">
+               
+                <div class="pie" [chart]="linechart" (click)="ClickDiv()"></div>
+                <br>
+                <br>
+                <mat-accordion>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <h3>Comment configurer le Graphe ?</h3>
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Cliquez pour accèder au didactiel détaillé de configuration
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>desciption du JSON du widget 1</p>
+                    <p>desciption du JSON du widget 2</p>
+                    <p>desciption du JSON du widget 3</p>
+                    <p>desciption du JSON du widget 4</p>
+                    <p>desciption du JSON du widget 5</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                       (closed)="panelOpenState = false">
+                   
+                  </mat-expansion-panel>
+                </mat-accordion>
+
+                <button mat-raised-button color="primary" matStepperNext style="margin-left: 85%; margin-top: 1%;"(click)="SelectLineChart()">Select Chart</button>
+
+              </mat-tab>
+            </mat-tab-group>
+
+            
+          </mat-step>
+          
+          <!--
+          <mat-step [stepControl]="firstFormGroupp" errorMessage="Address is required.">
+            
+            <ng-template matStepLabel>configurer le Widget</ng-template>
+                     
+            
+              <form [formGroup]="firstFormGroup" style="margin-top: 5%;">
+                      
+                       
+                      
+                        <mat-form-field appearance="fill">
+                          
+                          <mat-label style="margin-right: 30px;">Cols</mat-label>
+                          
+                          <input required formControlName="cols">
+                          
+                         <br>
+                         <br>
+                                
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                          
+                          <mat-label style="margin-right: 25px;">Rows</mat-label>
+                          
+                          <input required formControlName="rows">
+                          
+                         
+                                
+                        </mat-form-field>
+                        <br>
+                        <br>
+                        <mat-form-field appearance="fill">
+                          
+                          <mat-label style="margin-right: 50px;">Y</mat-label>
+                          
+                          <input required formControlName="y">
+                          
+                         
+                                
+                        </mat-form-field>
+                        <br><br>
+                        <mat-form-field appearance="fill">
+                          
+                          <mat-label style="margin-right: 50px;">X</mat-label>
+                          
+                          <input required formControlName="x">
+                          
+                         
+                                
+                        </mat-form-field>
+
+
+                        <div style="margin-top: 5%;">
+                          
+                          <button mat-button matStepperPrevious >Back</button>
+                          <button mat-button matStepperNext (click)="AddwidgetFormCtrl()" style="margin-left: 80%;">Next</button>
+                        </div>
+
+                      </form>
+                        
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+
+                      
+                      
+          
+          
+          </mat-step>
+
+        -->
+
+          <mat-step [stepControl]="secondFormGroupp" errorMessage="Address is required.">
+            
+            <ng-template matStepLabel>Ajouter La source de données</ng-template>
+                     
+            
+              <form [formGroup]="secondFormGroup" style="margin-top: 5%;">
+                      
+                       
+                     
+                        <mat-form-field appearance="fill">
+                          <div *ngIf="!checked">
+                          <mat-label style="margin-right: 30px;">URL</mat-label>
+                          
+                          <input required formControlName="URLCtrl">
+                          <br>
+                          <br>
+                          <br>
+                        </div>
+                          <mat-slide-toggle
+                            
+                            [checked]="checked"
+                            (change)="changeToggle()"
+                            color = 'primary'
+                            >
+                          Api avec authentification
+                        </mat-slide-toggle>
+
+                        <br>
+                        <br>
+
+
+                        <div *ngIf="checked">
+                        
+                                <form [formGroup]="loginFormGroup">
+
+                                  <mat-label style="margin-right: 87px; margin-bottom: 10px;">URL</mat-label>
+                                  
+                                  <input formControlName="URL" style="margin-bottom: 20px">
+                                  
+                                  
+                                  <br>
+
+
+                                                          <mat-label style="margin-right: 80px; margin-bottom: 10px;">Email</mat-label>
+                                  
+                                  <input formControlName="email" style="margin-bottom: 20px" type="email">
+                                  
+                                  
+                                  <br>
+
+                                  <mat-label style="margin-right: 30px;">Mot de passe</mat-label>
+                                  
+                                  <input type="password" formControlName="password">
+                                  <br>
+                                  <br>
+                                  <!--  <button mat-raised-button color="primary" (click)="addloginformControl()">Se connecter</button>
+-->
+                                </form>
+
+
+                        </div>
+                          
+
+                          <div style="margin-top: 5%;" *ngIf="!checked">
+                          
+                            <button mat-raised-button color="primary" matStepperPrevious >Back</button>
+                            <button mat-raised-button color="primary" matStepperNext (click)="AddFirstCtrl()" style="margin-left: 80%;">Next</button>
+                          </div>
+                                
+
+                          <div style="margin-top: 5%;" *ngIf="checked">
+                          
+                            <button mat-raised-button color="primary" matStepperPrevious >Back</button>
+                            <button mat-raised-button color="primary" matStepperNext (click)="addloginformControl()" style="margin-left: 80%;">Next</button>
+                          </div>
+                        </mat-form-field>
+
+                        
+                      </form>
+                        
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+
+                      
+                      
+          
+          
+          </mat-step>
+
+
+
+          <mat-step>
+            <ng-template matStepLabel>Configurer le Graphe</ng-template>
+            
+            
+
+            <form [formGroup]="FinalFormGroup" style="margin-top: 5%;">
+
+
+              <!--
+              <div style="position: absolute;margin-left: 60%;margin-top: 10%;">
+                <label>Choisir la couleur d'arrière Plan </label> <br>
+                <p-colorPicker formControlName="color" ></p-colorPicker>
+      
+              </div>
+                       
+                      
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 45px;">Texte de la légende</mat-label>
+                
+                <input required formControlName="txt">
+                
+               <br>
+               <br>
+                      
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 22px;">Lien Href de la légende</mat-label>
+                
+                <input required formControlName="lien">
+                
+               
+                      
+              </mat-form-field>
+              <br>
+              <br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 50px;">Hauteur du graphe</mat-label>
+                
+                <input required formControlName="haut">
+                
+               
+                      
+              </mat-form-field>
+              <br><br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 50px;">Largeur du graphe</mat-label>
+                
+                <input required formControlName="larg">
+
+                <br>
+              <br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 70px;">Titre du graphe</mat-label>
+                
+                <input required formControlName="titre">
+                
+               
+                      
+              </mat-form-field>
+              
+              <br>
+              <br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 125px;">Marge</mat-label>
+                
+                <input required formControlName="marge">
+                
+               
+                      
+              </mat-form-field>
+              
+              <br>
+              <br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 50px;">Alignement (Centré, Gauche, Droite)</mat-label>
+                
+                <input required formControlName="align">
+                
+               
+                      
+              </mat-form-field>
+              
+              <br>
+              <br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 115px;">Position</mat-label>
+                
+                <input required formControlName="pos">
+                
+               
+                      
+              </mat-form-field>
+              
+              <br>
+              <br>
+              <mat-form-field appearance="fill">
+                
+                <mat-label style="margin-right: 62px;">Label de l'axe Y </mat-label>
+                
+                <input required formControlName="label">
+                
+               
+                      
+              </mat-form-field>
+              <br><br>
+                
+               
+                      
+              </mat-form-field>
+
+              -->
+            
+
+            <mat-form-field appearance="fill">
+                            
+              <mat-label style="margin-right: 45px;">MainBranch</mat-label>
+              
+              <input required formControlName="MainBranch">
+              
+            <br>
+            <br>
+                    
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                            
+              <mat-label style="margin-right: 38px;">LeafName</mat-label>
+              
+              <input required formControlName="LeafName">
+              
+            <br>
+            <br>
+                    
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill">
+                            
+              <mat-label style="margin-right: 45px;">ValueName</mat-label>
+              
+              <input required formControlName="ValueName">
+          
+              
+            <br>
+            <br>
+                    
+            </mat-form-field>
+
+
+
+              <div style="margin-top: 5%;">
+                
+                <button mat-raised-button color="primary" matStepperPrevious >Back</button>
+                <button mat-raised-button color="primary" (click)="submitfin()"  style="margin-left: 80%;">Finaliser L'ajout</button>
+                
+              </div>
+
+            </form>
+            
+            
+          
+          </mat-step>
+        </mat-horizontal-stepper>
+        
+      
+      
+      </div>
+      
+      
+      
+    </ng-template>
+
+
+    
+
+
+

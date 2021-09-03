@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://www.worldpop.org/rest/data/pop/wpgp",
+      "secure": false
+    }
+  }
